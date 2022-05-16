@@ -13,9 +13,9 @@
 		3D2A8DFE2832812C00E02D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A8DFC2832812C00E02D86 /* Main.storyboard */; };
 		3D2A8E002832813000E02D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A8DFF2832813000E02D86 /* Assets.xcassets */; };
 		3D2A8E032832813000E02D86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A8E012832813000E02D86 /* LaunchScreen.storyboard */; };
-		3D2A8E0E2832813000E02D86 /* tableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A8E0D2832813000E02D86 /* tableTests.swift */; };
-		3D2A8E182832813000E02D86 /* tableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A8E172832813000E02D86 /* tableUITests.swift */; };
-		3D2A8E1A2832813000E02D86 /* tableUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A8E192832813000E02D86 /* tableUITestsLaunchTests.swift */; };
+		3DC2209C28329391008239F3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2209B28329391008239F3 /* DataModel.swift */; };
+		3DC2209F283293C7008239F3 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2209E283293C7008239F3 /* Networker.swift */; };
+		3DC220A228329EA3008239F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC220A128329EA3008239F3 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +45,10 @@
 		3D2A8E022832813000E02D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D2A8E042832813000E02D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2A8E092832813000E02D86 /* tableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D2A8E0D2832813000E02D86 /* tableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableTests.swift; sourceTree = "<group>"; };
 		3D2A8E132832813000E02D86 /* tableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D2A8E172832813000E02D86 /* tableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableUITests.swift; sourceTree = "<group>"; };
-		3D2A8E192832813000E02D86 /* tableUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DC2209B28329391008239F3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		3DC2209E283293C7008239F3 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
+		3DC220A128329EA3008239F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				3D2A8DF52832812C00E02D86 /* table */,
-				3D2A8E0C2832813000E02D86 /* tableTests */,
-				3D2A8E162832813000E02D86 /* tableUITests */,
 				3D2A8DF42832812C00E02D86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,32 +97,50 @@
 		3D2A8DF52832812C00E02D86 /* table */ = {
 			isa = PBXGroup;
 			children = (
+				3DC220A028329D83008239F3 /* ViewModel */,
+				3DC2209D283293BC008239F3 /* Network */,
+				3DC2209A28329372008239F3 /* Model */,
+				3DC2209928329359008239F3 /* View */,
 				3D2A8DF62832812C00E02D86 /* AppDelegate.swift */,
 				3D2A8DF82832812C00E02D86 /* SceneDelegate.swift */,
-				3D2A8DFA2832812C00E02D86 /* ViewController.swift */,
-				3D2A8DFC2832812C00E02D86 /* Main.storyboard */,
 				3D2A8DFF2832813000E02D86 /* Assets.xcassets */,
-				3D2A8E012832813000E02D86 /* LaunchScreen.storyboard */,
 				3D2A8E042832813000E02D86 /* Info.plist */,
 			);
 			path = table;
 			sourceTree = "<group>";
 		};
-		3D2A8E0C2832813000E02D86 /* tableTests */ = {
+		3DC2209928329359008239F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3D2A8E0D2832813000E02D86 /* tableTests.swift */,
+				3D2A8DFA2832812C00E02D86 /* ViewController.swift */,
+				3D2A8DFC2832812C00E02D86 /* Main.storyboard */,
+				3D2A8E012832813000E02D86 /* LaunchScreen.storyboard */,
+				3DC220A128329EA3008239F3 /* DetailViewController.swift */,
 			);
-			path = tableTests;
+			path = View;
 			sourceTree = "<group>";
 		};
-		3D2A8E162832813000E02D86 /* tableUITests */ = {
+		3DC2209A28329372008239F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3D2A8E172832813000E02D86 /* tableUITests.swift */,
-				3D2A8E192832813000E02D86 /* tableUITestsLaunchTests.swift */,
+				3DC2209B28329391008239F3 /* DataModel.swift */,
 			);
-			path = tableUITests;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DC2209D283293BC008239F3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3DC2209E283293C7008239F3 /* Networker.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3DC220A028329D83008239F3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC2209F283293C7008239F3 /* Networker.swift in Sources */,
 				3D2A8DFB2832812C00E02D86 /* ViewController.swift in Sources */,
+				3DC2209C28329391008239F3 /* DataModel.swift in Sources */,
+				3DC220A228329EA3008239F3 /* DetailViewController.swift in Sources */,
 				3D2A8DF72832812C00E02D86 /* AppDelegate.swift in Sources */,
 				3D2A8DF92832812C00E02D86 /* SceneDelegate.swift in Sources */,
 			);
@@ -268,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D2A8E0E2832813000E02D86 /* tableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +294,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D2A8E182832813000E02D86 /* tableUITests.swift in Sources */,
-				3D2A8E1A2832813000E02D86 /* tableUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
