@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataModel: Decodable {
+struct DataModel: Codable {
     var userId: Int
     var id: Int
     var title: String

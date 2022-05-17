@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct ContactsModel: Codable {
-    var results: Results
+struct Results: Codable {
+    var results: [ContactModel]
 }
 
-struct Results: Codable {
+struct ContactModel: Codable {
     var name: Name
     var email: String
     var picture: Picture

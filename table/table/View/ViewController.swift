@@ -15,13 +15,13 @@ class CellViewController: UITableViewCell {
 
 class ViewController: UIViewController {
     
-    var array: [DataModel] = []
+    var data: [DataModel] = []
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "My list"
+        title = "Lorem ipsum"
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -29,11 +29,9 @@ class ViewController: UIViewController {
     }
     
     func fetchData() {
-        Networker.fetch(URL(string: "https://jsonplaceholder.typicode.com/posts")!) { data in
-            print("Fetched \(data.count) elements")
-            
-            self.array = data
-            
+        Networker<[DataModel]>.fetch(URL(string: "https://jsonplaceholder.typicode.com/posts")!) { data in
+            print("Récupéré \(data.count) paragraphes")
+            self.data = data            
             DispatchQueue.main.async { // pour que ce soit géré par le thread principal
                 self.tableView.reloadData()
             }
@@ -46,7 +44,7 @@ class ViewController: UIViewController {
         
         // Ajout des boutons
         alert.addAction(UIAlertAction(title: "Oui", style: .destructive, handler: { _ in // (action)
-            self.array.remove(at: index.row)
+            self.data.remove(at: index.row)
             self.tableView.deleteRows(at: [index], with: .automatic)
             self.tableView.reloadData()
         }))
@@ -64,7 +62,7 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detail = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detail.data = array[indexPath.row]
+        detail.data = data[indexPath.row]
         
         navigationController?.pushViewController(detail, animated: true)
     }
@@ -82,23 +80,23 @@ extension ViewController: UITableViewDelegate {
     
     // Swipe vers la gauche (trailing = ajout des boutons d'action à la fin = droite)
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        return self.deleteAction(dataModel: array[indexPath.row], index: indexPath)
+        return self.deleteAction(dataModel: data[indexPath.row], index: indexPath)
     }
     // Swipe vers la droite
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        return self.deleteAction(dataModel: array[indexPath.row], index: indexPath)
+        return self.deleteAction(dataModel: data[indexPath.row], index: indexPath)
     }
 }
 extension ViewController: UITableViewDataSource {
     // TableView a besoin de connaître combien de cellules il y a en tout
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        array.count
+        data.count
     }
     
     // TableView a besoin d'une méthode pour récupérer la cellule
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellViewController", for: indexPath) as! CellViewController
-        cell.label.text = array[indexPath.row].title
+        cell.label.text = data[indexPath.row].title
         return cell
     }
 }
