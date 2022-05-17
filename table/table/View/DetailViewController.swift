@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var body: UILabel!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         titleContent.text = data?.title
         userId.text = data?.userId.description
         id.text = data?.id.description

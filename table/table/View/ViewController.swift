@@ -39,16 +39,54 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    // Ouvre une popup de confirmation
+    func showPopup(dataModel: DataModel, index: IndexPath) {
+        let alert = UIAlertController(title: "Confirmation", message: "Êtes-vous sûr de vouloir supprimer la cellule \"\(dataModel.title)\" ?", preferredStyle: .alert)
+        
+        // Ajout des boutons
+        alert.addAction(UIAlertAction(title: "Oui", style: .destructive, handler: { _ in // (action)
+            self.array.remove(at: index.row)
+            self.tableView.deleteRows(at: [index], with: .automatic)
+            self.tableView.reloadData()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: { _ in
+        }))
+        
+        self.present(alert, animated: true)
+    }
 }
 
 // Pour ajouter des fonctionnalités au controlleur de base
 extension ViewController: UITableViewDelegate {
+    // Ouvre la vue détaillée lors du press
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detail = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detail.data = array[indexPath.row]
         
         navigationController?.pushViewController(detail, animated: true)
+    }
+    
+    // Supprime une cellule lors du swipe
+    func deleteAction(dataModel: DataModel, index: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "🗑") { _, _, completion in // (action, view, completion)
+            self.showPopup(dataModel: dataModel, index: index)
+            completion(true)
+        }
+        action.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    // Swipe vers la gauche (trailing = ajout des boutons d'action à la fin = droite)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return self.deleteAction(dataModel: array[indexPath.row], index: indexPath)
+    }
+    // Swipe vers la droite
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return self.deleteAction(dataModel: array[indexPath.row], index: indexPath)
     }
 }
 extension ViewController: UITableViewDataSource {

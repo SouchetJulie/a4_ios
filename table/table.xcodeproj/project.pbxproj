@@ -13,6 +13,8 @@
 		3D2A8DFE2832812C00E02D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A8DFC2832812C00E02D86 /* Main.storyboard */; };
 		3D2A8E002832813000E02D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A8DFF2832813000E02D86 /* Assets.xcassets */; };
 		3D2A8E032832813000E02D86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A8E012832813000E02D86 /* LaunchScreen.storyboard */; };
+		3DAED87F28339B5F0018E1CF /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAED87E28339B5F0018E1CF /* ContactsModel.swift */; };
+		3DAED8812833A3A60018E1CF /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAED8802833A3A60018E1CF /* ContactsView.swift */; };
 		3DC2209C28329391008239F3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2209B28329391008239F3 /* DataModel.swift */; };
 		3DC2209F283293C7008239F3 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2209E283293C7008239F3 /* Networker.swift */; };
 		3DC220A228329EA3008239F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC220A128329EA3008239F3 /* DetailViewController.swift */; };
@@ -46,6 +48,8 @@
 		3D2A8E042832813000E02D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2A8E092832813000E02D86 /* tableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2A8E132832813000E02D86 /* tableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DAED87E28339B5F0018E1CF /* ContactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
+		3DAED8802833A3A60018E1CF /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		3DC2209B28329391008239F3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		3DC2209E283293C7008239F3 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		3DC220A128329EA3008239F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				3D2A8DFC2832812C00E02D86 /* Main.storyboard */,
 				3D2A8E012832813000E02D86 /* LaunchScreen.storyboard */,
 				3DC220A128329EA3008239F3 /* DetailViewController.swift */,
+				3DAED8802833A3A60018E1CF /* ContactsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				3DC2209B28329391008239F3 /* DataModel.swift */,
+				3DAED87E28339B5F0018E1CF /* ContactsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +286,8 @@
 				3DC220A228329EA3008239F3 /* DetailViewController.swift in Sources */,
 				3D2A8DF72832812C00E02D86 /* AppDelegate.swift in Sources */,
 				3D2A8DF92832812C00E02D86 /* SceneDelegate.swift in Sources */,
+				3DAED87F28339B5F0018E1CF /* ContactsModel.swift in Sources */,
+				3DAED8812833A3A60018E1CF /* ContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
