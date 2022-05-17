@@ -59,11 +59,13 @@ extension ContactsViewController: UITableViewDataSource {
         cell.nameLabel.text = "\(contacts[indexPath.row].name.title) \(contacts[indexPath.row].name.first) \(contacts[indexPath.row].name.last)"
         cell.emailLabel.text = contacts[indexPath.row].email
         
-        // Charge l'image depuis l'url
+        // Construit l'URL depuis le string dans le modèle
         if let url = URL(string: contacts[indexPath.row].picture.large) {
             DispatchQueue.global().async {
+            // Récupère l'image via requête
               if let data = try? Data(contentsOf:url) {
                 DispatchQueue.main.async {
+                    // L'assigne à l'image de la vue
                   cell.imageOutlet.image = UIImage(data:data)
                 }
               }
