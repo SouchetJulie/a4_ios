@@ -49,6 +49,7 @@
 		3D2A8E042832813000E02D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2A8E092832813000E02D86 /* tableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2A8E132832813000E02D86 /* tableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DABFC642833D64D0000B9AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3DAED87E28339B5F0018E1CF /* ContactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
 		3DAED8802833A3A60018E1CF /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		3DC2209B28329391008239F3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		3D2A8DEA2832812C00E02D86 = {
 			isa = PBXGroup;
 			children = (
+				3DABFC642833D64D0000B9AA /* README.md */,
 				3D2A8DF52832812C00E02D86 /* table */,
 				3D2A8DF42832812C00E02D86 /* Products */,
 			);
