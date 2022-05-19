@@ -11,5 +11,6 @@ import UIKit
 class SearchResultCell: UITableViewCell {
   @IBOutlet weak var artistLabel: UILabel!
   @IBOutlet weak var trackLabel: UILabel!
+  @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var trackImage: UIImageView!
 }

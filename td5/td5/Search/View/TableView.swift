@@ -8,41 +8,11 @@
 import Foundation
 import UIKit
 import Kingfisher
-import AVKit
 
 extension SearchViewController: UITableViewDelegate {
-  // Ouvre la vue de lecture
+  // Open music player on click
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // TODO move to separate file
-    let track = self.tracks[indexPath.row]
-
-    guard let url = URL(string: track.previewUrl ?? "") else {
-      print("Open player error: invalid url", self.tracks[indexPath.row].previewUrl ?? "<no url>")
-      return
-    }
-
-    print(">> Go to: \(track.trackName ?? "<no track name>")")
-
-    let player = AVPlayer(url: url)
-
-    // Add music player
-    let playerViewController = AVPlayerViewController() // creating a player view controller
-    playerViewController.player = player
-
-    // Add background image if available
-    // TODO to fix
-    if let imageUrl = URL(string: track.artworkUrl100 ?? track.artworkUrl60 ?? "") {
-      let image = UIImageView()
-      image.kf.setImage(with: imageUrl)
-      playerViewController.contentOverlayView?.addSubview(image)
-    } else {
-      print("No background available")
-    }
-
-    // Show player
-    self.present(playerViewController, animated: true) {
-      playerViewController.player!.play()
-    }
+    self.showMusicPlayer(self.tracks[indexPath.row])
   }
 }
 
@@ -57,6 +27,7 @@ extension SearchViewController: UITableViewDataSource {
     let track = tracks[indexPath.row]
     cell.artistLabel.text = track.artistName
     cell.trackLabel.text = track.trackName ?? "<no title>"
+    cell.priceLabel.text = "\(track.trackPrice?.description ?? "<no price>") \(track.currency)"
 
     if let artworkUrl = URL(string: track.artworkUrl60 ?? "") {
       cell.trackImage.kf.setImage(with: artworkUrl)

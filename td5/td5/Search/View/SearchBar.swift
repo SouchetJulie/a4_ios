@@ -10,10 +10,10 @@ import UIKit
 
 extension SearchViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
-    guard let term = searchController.searchBar.text, term != "" else {
+    guard let term = searchController.searchBar.text, term != "" else { // nothing to search
       self.tracks = []
       self.tableView.reloadData()
-      return // nothing to search
+      return
     }
 
     self.fetchData(term)

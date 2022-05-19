@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D401D0C283631ED00010167 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D401D0B283631ED00010167 /* MusicPlayer.swift */; };
 		3D9A5FE72835219D00211F76 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A5FE62835219D00211F76 /* SearchViewModel.swift */; };
 		3D9A5FEA2835220700211F76 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A5FE92835220700211F76 /* Networker.swift */; };
 		3DCCDA5228352CA50007A810 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCCDA5128352CA50007A810 /* Kingfisher */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D401D0B283631ED00010167 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		3D9A5FE62835219D00211F76 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		3D9A5FE92835220700211F76 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		3DCCDA5428352E7B0007A810 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				3DCCDA5428352E7B0007A810 /* SearchResultCell.swift */,
 				3DCCDA5628352E940007A810 /* SearchBar.swift */,
 				3DCCDA592835313A0007A810 /* TableView.swift */,
+				3D401D0B283631ED00010167 /* MusicPlayer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				3DCCDA5528352E7B0007A810 /* SearchResultCell.swift in Sources */,
 				3D9A5FEA2835220700211F76 /* Networker.swift in Sources */,
+				3D401D0C283631ED00010167 /* MusicPlayer.swift in Sources */,
 				3DFD1041283520D700634252 /* SearchViewController.swift in Sources */,
 				3DCCDA5728352E940007A810 /* SearchBar.swift in Sources */,
 				3DCCDA5A2835313A0007A810 /* TableView.swift in Sources */,

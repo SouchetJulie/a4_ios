@@ -14,7 +14,7 @@ class SearchViewModel {
       return
     }
 
-    Networker<ITunesSearchResponse?>.fetch(url) { result in
+    Networker<ITunesSearchResponseModel?>.fetch(url) { result in
       guard let data = result else {
         print("iTunes fetch error: no response")
         return
@@ -31,7 +31,7 @@ class SearchViewModel {
   }
 }
 
-struct ITunesSearchResponse: Codable {
+struct ITunesSearchResponseModel: Codable {
   let resultCount: Int
   let results: [ITunesSearchResult]
 }
@@ -43,4 +43,6 @@ struct ITunesSearchResult: Codable {
   let artworkUrl100: String?
   let previewUrl: String?
   let trackName: String?
+  let trackPrice: Float?
+  let currency: String
 }
